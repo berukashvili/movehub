@@ -12,8 +12,8 @@ export const StyledItemNavLink = styled(NavLink)`
 
 export const StyledHeroImageContainer = styled.div`
   position: relative;
-  width: 380px;
-  height: 230px;
+  width: 180px;
+  height: 130px;
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;

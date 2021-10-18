@@ -4,9 +4,9 @@ import {
   StyledHeroImageContainer,
   StyledHeroImage,
   StyledItemTitle,
-} from "./StyledHeroListItem";
+} from "./StyledHeroPopular";
 
-const HeroListItem = ({ item }) => {
+const HeroPopular = ({ item }) => {
   const img_780 = "https://image.tmdb.org/t/p/w780";
 
   return (
@@ -19,4 +19,4 @@ const HeroListItem = ({ item }) => {
   );
 };
 
-export default HeroListItem;
+export default HeroPopular;

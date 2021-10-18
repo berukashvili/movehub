@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export const StyledNavList = styled.ul`
   display: flex;
+  justify-content: center;
 `;
 
 export const StyledNavItem = styled.li`

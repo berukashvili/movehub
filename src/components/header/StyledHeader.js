@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-export const StyledHeaderWrapper = styled.header`
+export const StyledHeaderContainer = styled.header`
+  position: absolute;
+`;
+
+export const StyledHeaderWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 55px 0 70px 0;
+  justify-content: flex-start;
+  margin-top: 55px;
 `;

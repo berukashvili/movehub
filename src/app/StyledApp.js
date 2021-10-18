@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
   }
 
   body {
@@ -14,6 +15,8 @@ export const GlobalStyle = createGlobalStyle`
   font-size: 16px;
   font-weight: normal;
   background-color: black;
+  width: 1700px;
+  margin: 0 auto;
   }
 
   a {
@@ -29,4 +32,6 @@ export const GlobalStyle = createGlobalStyle`
     background: none;
     outline: none;
   }
+
+
 `;

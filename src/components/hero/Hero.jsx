@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
-import {
-  StyledHeroWrapper,
-  StyledHeroHeaderWrapper,
-  StyledHeroHeader,
-} from "./StyledHero";
+import { StyledHeroWrapper } from "./StyledHero";
 import HeroList from "./heroList/HeroList";
-import SearchBar from "./searchBar/SearchBar";
 import { searchMedia } from "apis/MovieDB";
 
 const Hero = (props) => {
@@ -31,7 +26,7 @@ const Hero = (props) => {
           query: debounce,
         },
       });
-      const renderedMovies = results.slice([0], [3]);
+      const renderedMovies = results.slice([0], [4]);
       setMedia(renderedMovies);
     };
 
@@ -40,10 +35,6 @@ const Hero = (props) => {
 
   return (
     <StyledHeroWrapper>
-      <StyledHeroHeaderWrapper>
-        <StyledHeroHeader>{props.title}</StyledHeroHeader>
-        <SearchBar setMediaQuery={setMediaQuery} />
-      </StyledHeroHeaderWrapper>
       <HeroList media={media} />
     </StyledHeroWrapper>
   );
