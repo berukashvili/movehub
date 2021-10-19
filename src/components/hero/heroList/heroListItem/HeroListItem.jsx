@@ -1,19 +1,25 @@
 import React from "react";
 import {
   StyledItemNavLink,
+  StyledItemTitle,
   StyledHeroImageContainer,
   StyledHeroImage,
-  StyledItemTitle,
 } from "./StyledHeroListItem";
 
-const HeroListItem = ({ item }) => {
+const HeroListItem = (props) => {
   const img_780 = "https://image.tmdb.org/t/p/w780";
 
   return (
-    <StyledItemNavLink key={item.id} to={`/media/${item.id}`}>
-      <StyledHeroImageContainer>
-        <StyledItemTitle>{item.title}</StyledItemTitle>
-        <StyledHeroImage src={`${img_780}/${item.poster_path}`} />
+    <StyledItemNavLink
+      default={props.default}
+      key={props.item.id}
+      to={`/media/${props.item.id}`}
+    >
+      <StyledHeroImageContainer default={props.default}>
+        <StyledHeroImage src={`${img_780}/${props.item.poster_path}`} />
+        <StyledItemTitle default={props.default}>
+          {props.item.title}
+        </StyledItemTitle>
       </StyledHeroImageContainer>
     </StyledItemNavLink>
   );

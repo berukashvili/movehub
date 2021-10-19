@@ -7,6 +7,8 @@ const Hero = (props) => {
   const [mediaQuery, setMediaQuery] = useState(props.defaultMedia);
   const [debounce, setDebounce] = useState(mediaQuery);
   const [media, setMedia] = useState([]);
+  const [popular, setPopular] = useState([]);
+  const [upcoming, setUpcoming] = useState([]);
 
   useEffect(() => {
     const timerId = setTimeout(() => {
@@ -33,9 +35,40 @@ const Hero = (props) => {
     search();
   }, [debounce]);
 
+  useEffect(() => {
+    const getPopular = async () => {
+      const {
+        data: { results },
+      } = await searchMedia.get(`/movie/popular?`, {
+        params: {
+          query: debounce,
+        },
+      });
+      const renderedMovies = results.slice([0], [10]);
+      setPopular(renderedMovies);
+    };
+
+    getPopular();
+  }, []);
+  useEffect(() => {
+    const getUpcoming = async () => {
+      const {
+        data: { results },
+      } = await searchMedia.get(`/movie/upcoming?`, {
+        params: {
+          query: debounce,
+        },
+      });
+      const renderedMovies = results.slice([0], [10]);
+      setUpcoming(renderedMovies);
+    };
+
+    getUpcoming();
+  }, []);
+
   return (
     <StyledHeroWrapper>
-      <HeroList media={media} />
+      <HeroList media={media} popular={popular} upcoming={upcoming} />
     </StyledHeroWrapper>
   );
 };

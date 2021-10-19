@@ -1,17 +1,34 @@
 import React from "react";
-import { StyledHeroListWrapper } from "./StyledHeroList";
+import {
+  StyledHeroListWrapper,
+  StyledHeroDefaultWrapper,
+  StyledHeroPopularWrapper,
+  StyledHeroUpcomingWrapper,
+} from "./StyledHeroList";
 import HeroListItem from "./heroListItem/HeroListItem";
-import HeroPopular from "./heroPopular/HeroPopular";
 
-const HeroList = (props) => {
+const HeroList = ({ media, popular, upcoming }) => {
   return (
     <StyledHeroListWrapper>
-      {props.media.map((item) => (
-        <HeroListItem key={item.id} item={item}></HeroListItem>
-      ))}
-      {props.media.map((item) => (
-        <HeroPopular key={item.id} item={item}></HeroPopular>
-      ))}
+      <StyledHeroDefaultWrapper>
+        {media.map((item) => (
+          <HeroListItem
+            default='default'
+            key={item.id}
+            item={item}
+          ></HeroListItem>
+        ))}
+      </StyledHeroDefaultWrapper>
+      <StyledHeroPopularWrapper>
+        {popular.map((item) => (
+          <HeroListItem key={item.id} item={item}></HeroListItem>
+        ))}
+      </StyledHeroPopularWrapper>
+      <StyledHeroUpcomingWrapper>
+        {upcoming.map((item) => (
+          <HeroListItem key={item.id} item={item}></HeroListItem>
+        ))}
+      </StyledHeroUpcomingWrapper>
     </StyledHeroListWrapper>
   );
 };
