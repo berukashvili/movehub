@@ -8,10 +8,10 @@ const Nav = () => {
         <StyledNavLink to='/movies'>Movies</StyledNavLink>
       </StyledNavItem>
       <StyledNavItem>
-        <StyledNavLink to='Shows'>Shows</StyledNavLink>
+        <StyledNavLink to='/shows'>Shows</StyledNavLink>
       </StyledNavItem>
       <StyledNavItem>
-        <StyledNavLink to='favourites'>Favourites</StyledNavLink>
+        <StyledNavLink to='/favourites'>Favourites</StyledNavLink>
       </StyledNavItem>
     </StyledNavList>
   );

@@ -1,12 +1,5 @@
 import React from "react";
-import Header from "components/header/Header";
 
-const Favourites = () => {
-  return (
-    <Header>
-      <div>Favourites</div>
-    </Header>
-  );
+export const Favourites = () => {
+  return <h1>Favourites Page</h1>;
 };
-
-export default Favourites;

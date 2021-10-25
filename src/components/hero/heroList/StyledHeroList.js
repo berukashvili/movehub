@@ -10,5 +10,3 @@ export const StyledHeroDefaultWrapper = styled.div`
   display: flex;
 `;
 export const StyledHeroPopularWrapper = styled(StyledHeroDefaultWrapper)``;
-
-export const StyledHeroUpcomingWrapper = styled(StyledHeroDefaultWrapper)``;

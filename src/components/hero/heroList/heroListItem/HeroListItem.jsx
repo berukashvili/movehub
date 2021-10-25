@@ -6,20 +6,14 @@ import {
   StyledHeroImage,
 } from "./StyledHeroListItem";
 
-const HeroListItem = (props) => {
+const HeroListItem = ({ movie, popularMovie, show, popularShow }) => {
   const img_780 = "https://image.tmdb.org/t/p/w780";
 
   return (
-    <StyledItemNavLink
-      default={props.default}
-      key={props.item.id}
-      to={`/media/${props.item.id}`}
-    >
-      <StyledHeroImageContainer default={props.default}>
-        <StyledHeroImage src={`${img_780}/${props.item.poster_path}`} />
-        <StyledItemTitle default={props.default}>
-          {props.item.title}
-        </StyledItemTitle>
+    <StyledItemNavLink key={`${movie}.id`} to={`/details/${movie.id}`}>
+      <StyledHeroImageContainer>
+        <StyledHeroImage src={`${img_780}/${movie.poster_path}`} />
+        <StyledItemTitle>{movie.title}</StyledItemTitle>
       </StyledHeroImageContainer>
     </StyledItemNavLink>
   );

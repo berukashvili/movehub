@@ -3,32 +3,47 @@ import {
   StyledHeroListWrapper,
   StyledHeroDefaultWrapper,
   StyledHeroPopularWrapper,
-  StyledHeroUpcomingWrapper,
 } from "./StyledHeroList";
 import HeroListItem from "./heroListItem/HeroListItem";
+import { useLocation } from "react-router";
 
-const HeroList = ({ media, popular, upcoming }) => {
+export const HeroList = ({ movies, popularMovies, shows, popularShows }) => {
+  const { pathname } = useLocation();
+
+  const defaultList =
+    pathname === "/movies"
+      ? movies.map((movie) => (
+          <HeroListItem key={movie.id} movie={movie}></HeroListItem>
+        ))
+      : shows.map((show) => (
+          <HeroListItem key={show.id} shows={show}></HeroListItem>
+        ));
+
+  shows.map((item) => console.log(item.id));
+
+  const popularList =
+    pathname === "/movies"
+      ? popularMovies.map((popularMovie) => (
+          <HeroListItem
+            key={popularMovie.id}
+            movie={popularMovie}
+          ></HeroListItem>
+        ))
+      : popularShows.map((popularShow) => (
+          <HeroListItem
+            key={popularShow.id}
+            popularShow={popularShow}
+          ></HeroListItem>
+        ));
+
   return (
     <StyledHeroListWrapper>
       <StyledHeroDefaultWrapper>
-        {media.map((item) => (
-          <HeroListItem
-            default='default'
-            key={item.id}
-            item={item}
-          ></HeroListItem>
+        {movies.map((movie) => (
+          <HeroListItem key={movie.id} movie={movie}></HeroListItem>
         ))}
       </StyledHeroDefaultWrapper>
-      <StyledHeroPopularWrapper>
-        {popular.map((item) => (
-          <HeroListItem key={item.id} item={item}></HeroListItem>
-        ))}
-      </StyledHeroPopularWrapper>
-      <StyledHeroUpcomingWrapper>
-        {upcoming.map((item) => (
-          <HeroListItem key={item.id} item={item}></HeroListItem>
-        ))}
-      </StyledHeroUpcomingWrapper>
+      <StyledHeroPopularWrapper></StyledHeroPopularWrapper>
     </StyledHeroListWrapper>
   );
 };

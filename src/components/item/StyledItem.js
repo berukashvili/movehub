@@ -9,7 +9,7 @@ export const StyledMediaContainer = styled.div`
 `;
 
 export const StyledFloat = styled.div`
-  background-image: url(${(props) => props.background});
+  background-image: url(${(props) => props.movieBackground});
   background-size: cover;
   position: absolute;
   top: 0;
