@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Header from "components/header/Header";
+import Hero from "components/hero/Hero";
+import { useMedia } from "hooks/useMedia";
 
 const Shows = () => {
-  return <div></div>;
+  const { mediaQuery, debounce, medias, popularMedias } = useMedia();
+
+  return (
+    <>
+      <Header />
+      <Hero
+        mediaQuery={mediaQuery}
+        debounce={debounce}
+        medias={medias}
+        popularMedias={popularMedias}
+      />
+    </>
+  );
 };
 
 export default Shows;

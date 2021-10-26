@@ -5,45 +5,20 @@ import {
   StyledHeroPopularWrapper,
 } from "./StyledHeroList";
 import HeroListItem from "./heroListItem/HeroListItem";
-import { useLocation } from "react-router";
 
-export const HeroList = ({ movies, popularMovies, shows, popularShows }) => {
-  const { pathname } = useLocation();
-
-  const defaultList =
-    pathname === "/movies"
-      ? movies.map((movie) => (
-          <HeroListItem key={movie.id} movie={movie}></HeroListItem>
-        ))
-      : shows.map((show) => (
-          <HeroListItem key={show.id} shows={show}></HeroListItem>
-        ));
-
-  shows.map((item) => console.log(item.id));
-
-  const popularList =
-    pathname === "/movies"
-      ? popularMovies.map((popularMovie) => (
-          <HeroListItem
-            key={popularMovie.id}
-            movie={popularMovie}
-          ></HeroListItem>
-        ))
-      : popularShows.map((popularShow) => (
-          <HeroListItem
-            key={popularShow.id}
-            popularShow={popularShow}
-          ></HeroListItem>
-        ));
-
+export const HeroList = ({ medias, popularMedias }) => {
   return (
     <StyledHeroListWrapper>
       <StyledHeroDefaultWrapper>
-        {movies.map((movie) => (
-          <HeroListItem key={movie.id} movie={movie}></HeroListItem>
+        {medias.map((media) => (
+          <HeroListItem key={media.id} media={media}></HeroListItem>
         ))}
       </StyledHeroDefaultWrapper>
-      <StyledHeroPopularWrapper></StyledHeroPopularWrapper>
+      <StyledHeroPopularWrapper>
+        {popularMedias.map((media) => (
+          <HeroListItem key={media.id} media={media}></HeroListItem>
+        ))}
+      </StyledHeroPopularWrapper>
     </StyledHeroListWrapper>
   );
 };
