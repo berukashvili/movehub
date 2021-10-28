@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { StyledHeroWrapper } from "./StyledHero";
 import HeroList from "./heroList/HeroList";
 
-const Hero = ({ medias, popularMedias }) => {
+const Hero = ({ medias, popularMedias, videos }) => {
   return (
     <StyledHeroWrapper>
       <HeroList medias={medias} popularMedias={popularMedias} />

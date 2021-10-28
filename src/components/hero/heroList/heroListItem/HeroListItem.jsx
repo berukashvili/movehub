@@ -7,7 +7,7 @@ import {
 } from "./StyledHeroListItem";
 import { useLocation } from "react-router";
 
-const HeroListItem = ({ media, popularMovies }) => {
+const HeroListItem = ({ media, defaultstyle }) => {
   const img_780 = "https://image.tmdb.org/t/p/w780";
 
   const { pathname } = useLocation();
@@ -15,15 +15,21 @@ const HeroListItem = ({ media, popularMovies }) => {
 
   return (
     <StyledItemNavLink
+      defaultstyle={defaultstyle}
       key={`${media}.id`}
       to={{
         pathname: `/details/${media.id}`,
         state: { itemType: getType },
       }}
     >
-      <StyledHeroImageContainer>
-        <StyledHeroImage src={`${img_780}/${media.poster_path}`} />
-        <StyledItemTitle>{media.title}</StyledItemTitle>
+      <StyledHeroImageContainer defaultstyle={defaultstyle}>
+        <StyledHeroImage
+          defaultstyle={defaultstyle}
+          src={`${img_780}/${media.poster_path}`}
+        />
+        <StyledItemTitle defaultstyle={defaultstyle}>
+          {media.title || media.original_name}
+        </StyledItemTitle>
       </StyledHeroImageContainer>
     </StyledItemNavLink>
   );

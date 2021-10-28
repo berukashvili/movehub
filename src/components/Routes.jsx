@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Movies from "pages/Movies";
 import Shows from "pages/Shows";
 import Favourites from "pages/Favourites";
-import Item from "./item/Item";
+import Details from "pages/Details";
 
 const Routes = () => {
   return (
@@ -12,7 +12,7 @@ const Routes = () => {
         <Route exact path={["/", "/movies"]} component={Movies} />
         <Route path='/shows' component={Shows} />
         <Route path='/favourites' component={Favourites} />
-        <Route path='/details/:id' component={Item} />
+        <Route path='/details/:id' component={Details} />
       </Switch>
     </>
   );

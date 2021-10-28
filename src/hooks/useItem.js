@@ -3,11 +3,11 @@ import { searchItem } from "apis/MovieDB";
 import { useParams } from "react-router";
 
 export const useItem = (item) => {
-  const [mediasInfo, setMediasInfo] = useState([]);
-  const [mediasActing, setMediasActing] = useState([]);
-  const [mediasDirector, setMediasDirector] = useState([]);
-  const [mediasImages, setMediasImages] = useState([]);
-  const [mediasBackground, setMediasBackground] = useState([]);
+  const [info, setInfo] = useState([]);
+  const [acting, setActing] = useState([]);
+  const [director, setDirector] = useState([]);
+  const [image, setImage] = useState([]);
+  const [background, setBackground] = useState([]);
 
   const { id } = useParams();
 
@@ -19,15 +19,15 @@ export const useItem = (item) => {
 
       const imageURL = `${URL}${data.poster_path}`;
 
-      setMediasInfo(data);
-      setMediasBackground(imageURL);
+      setInfo(data);
+      setBackground(imageURL);
     };
 
     search();
   }, []);
 
   useEffect(() => {
-    const getMediasCast = async () => {
+    const getCast = async () => {
       const {
         data: { cast, crew },
       } = await searchItem.get(`/${item}/${id}/credits?`);
@@ -37,32 +37,32 @@ export const useItem = (item) => {
         (director) => director.department === "Directing"
       );
 
-      setMediasActing(persons);
-      setMediasDirector(directing);
+      setActing(persons);
+      setDirector(directing);
     };
 
-    getMediasCast();
+    getCast();
   }, []);
 
   useEffect(() => {
-    const getMediasImages = async () => {
+    const getImage = async () => {
       const {
         data: { backdrops },
       } = await searchItem.get(`/${item}/${id}/images?`);
 
       const renderedBackdrops = backdrops.slice(0, 3);
 
-      setMediasImages(renderedBackdrops);
+      setImage(renderedBackdrops);
     };
 
-    getMediasImages();
+    getImage();
   }, []);
 
   return {
-    mediasInfo,
-    mediasActing,
-    mediasDirector,
-    mediasImages,
-    mediasBackground,
+    info,
+    acting,
+    director,
+    image,
+    background,
   };
 };

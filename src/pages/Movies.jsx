@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Header from "components/header/Header";
 import Hero from "components/hero/Hero";
 import { useMedia } from "hooks/useMedia";
+import { StyledBackground } from "./StyledMovies";
 
 const Movies = () => {
-  // const [mediaQuery, setMediaQuery] = useState("avengers");
-  // const [debounce, setDebounce] = useState(mediaQuery);
-  // const [movies, setMovies] = useState([]);
-  // const [popularMovies, setPopularMovies] = useState([]);
-
-  const { mediaQuery, debounce, medias, popularMedias } = useMedia("movie");
+  const { mediaQuery, debounce, medias, popularMedias } = useMedia(
+    "movie",
+    "Avengers"
+  );
 
   return (
     <>
@@ -20,6 +19,7 @@ const Movies = () => {
         medias={medias}
         popularMedias={popularMedias}
       />
+      <StyledBackground />
     </>
   );
 };

@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   *,
@@ -19,6 +19,8 @@ export const GlobalStyle = createGlobalStyle`
   margin: 0 auto;
   }
 
+  
+
   a {
     text-decoration: none;
   }
@@ -33,5 +35,6 @@ export const GlobalStyle = createGlobalStyle`
     outline: none;
   }
 
+ 
 
 `;

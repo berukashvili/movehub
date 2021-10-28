@@ -11,7 +11,11 @@ export const HeroList = ({ medias, popularMedias }) => {
     <StyledHeroListWrapper>
       <StyledHeroDefaultWrapper>
         {medias.map((media) => (
-          <HeroListItem key={media.id} media={media}></HeroListItem>
+          <HeroListItem
+            defaultstyle='defaultstyle'
+            key={media.id}
+            media={media}
+          ></HeroListItem>
         ))}
       </StyledHeroDefaultWrapper>
       <StyledHeroPopularWrapper>
