@@ -8,6 +8,7 @@ export const useItem = (item) => {
   const [director, setDirector] = useState([]);
   const [image, setImage] = useState([]);
   const [background, setBackground] = useState([]);
+  const [trailers, setTrailers] = useState([]);
 
   const { id } = useParams();
 
@@ -31,6 +32,7 @@ export const useItem = (item) => {
       const {
         data: { cast, crew },
       } = await searchItem.get(`/${item}/${id}/credits?`);
+
       const persons = cast.slice(0, 3);
 
       const directing = crew.find(
@@ -58,11 +60,28 @@ export const useItem = (item) => {
     getImage();
   }, []);
 
+  useEffect(() => {
+    const getTrailers = async () => {
+      const {
+        data: { results },
+      } = await searchItem.get(`/${item}/${id}/videos?`);
+
+      const renderedTrailers = results.find((item) => item.type === "Trailer");
+
+      setTrailers(renderedTrailers);
+
+      // setTrailers(renderedTrailers);
+    };
+
+    getTrailers();
+  }, []);
+
   return {
     info,
     acting,
     director,
     image,
     background,
+    trailers,
   };
 };

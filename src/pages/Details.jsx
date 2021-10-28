@@ -4,10 +4,13 @@ import {
   StyledFloat,
   StyledMediaItemsWrapper,
   StyledMediaTitle,
+  StyledTrailerBtn,
+  StyledTrailerVideo,
+  StyledMediaTrailerIcon,
   StyledMediaItemWrapper,
   StyledMediaVote,
   StyledMediaVoteNum,
-  StyledMediaButton,
+  StyledMediaBtn,
   StyledMediaFavIcon,
   StyledFavTitle,
   StyledMediaInfoTitle,
@@ -24,8 +27,10 @@ import { useLocation } from "react-router";
 const Details = () => {
   const { itemType } = useLocation().state;
 
-  const { info, acting, director, background, image, video } =
+  const { info, acting, director, background, image, trailers } =
     useItem(itemType);
+
+  const trailerPath = `https://www.youtube.com/watch?v=${trailers.key}`;
 
   return (
     <StyledMediaContainer>
@@ -36,11 +41,16 @@ const Details = () => {
           <StyledMediaVote>
             <StyledMediaVoteNum>{info.vote_average}</StyledMediaVoteNum>
           </StyledMediaVote>
-          <StyledMediaButton>
+          <StyledMediaBtn>
             <StyledMediaFavIcon />
-          </StyledMediaButton>
+          </StyledMediaBtn>
           <StyledFavTitle>Add to the favourites</StyledFavTitle>
+          <StyledTrailerBtn>
+            <StyledMediaTrailerIcon />
+            Trailer
+          </StyledTrailerBtn>
         </StyledMediaItemWrapper>
+
         <StyledMediaInfoTitle>OVERVIEW</StyledMediaInfoTitle>
         <StyledMediaInfo>{info.overview}</StyledMediaInfo>
         <StyledMediaCast>

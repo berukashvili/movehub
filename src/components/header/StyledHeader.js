@@ -8,6 +8,6 @@ export const StyledHeaderContainer = styled.header`
 export const StyledHeaderWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 55px;
 `;

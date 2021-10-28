@@ -2,14 +2,13 @@ import React from "react";
 import {
   StyledHeroListWrapper,
   StyledHeroDefaultWrapper,
-  StyledHeroPopularWrapper,
 } from "./StyledHeroList";
 import HeroListItem from "./heroListItem/HeroListItem";
 
 export const HeroList = ({ medias, popularMedias }) => {
   return (
     <StyledHeroListWrapper>
-      <StyledHeroDefaultWrapper>
+      <StyledHeroDefaultWrapper defaultstyle='defaultstyle'>
         {medias.map((media) => (
           <HeroListItem
             defaultstyle='defaultstyle'
@@ -18,11 +17,11 @@ export const HeroList = ({ medias, popularMedias }) => {
           ></HeroListItem>
         ))}
       </StyledHeroDefaultWrapper>
-      <StyledHeroPopularWrapper>
+      <StyledHeroDefaultWrapper>
         {popularMedias.map((media) => (
           <HeroListItem key={media.id} media={media}></HeroListItem>
         ))}
-      </StyledHeroPopularWrapper>
+      </StyledHeroDefaultWrapper>
     </StyledHeroListWrapper>
   );
 };

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FaHeart as heart } from "react-icons/fa";
+import { FaHeart as heart, FaPlay as play } from "react-icons/fa";
 
 export const StyledMediaContainer = styled.div`
   display: flex;
@@ -21,7 +21,6 @@ export const StyledFloat = styled.div`
 export const StyledMediaItemsWrapper = styled.div`
   display: flex;
   align-items: flex-start;
-
   flex-direction: column;
   width: 1000px;
 `;
@@ -55,15 +54,41 @@ export const StyledMediaVoteNum = styled.h4`
   font-weight: 600;
 `;
 
-export const StyledMediaButton = styled(StyledMediaVote)`
+export const StyledMediaBtn = styled.button`
   width: 50px;
   height: 50px;
   margin: 0 20px 0 70px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 `;
 
 export const StyledMediaFavIcon = styled(heart)`
   color: black;
   font-size: 16px;
+`;
+
+export const StyledMediaTrailerIcon = styled(play)`
+  color: black;
+  font-size: 16px;
+  margin-right: 8px;
+`;
+
+export const StyledTrailerVideo = styled.iframe``;
+
+export const StyledTrailerBtn = styled.button`
+  display: flex;
+  align-items: center;
+  background-color: orange;
+  font-size: 15px;
+  font-weight: 900;
+  padding: 12px 20px;
+  border-radius: 3px;
+  margin-left: 50px;
+  cursor: pointer;
 `;
 
 export const StyledFavTitle = styled.h6`

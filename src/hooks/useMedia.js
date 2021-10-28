@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { searchItem } from "apis/MovieDB";
-import { useParams } from "react-router";
 
 export const useMedia = (page, defaultQuery) => {
   const [mediaQuery] = useState(defaultQuery);

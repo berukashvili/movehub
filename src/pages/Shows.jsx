@@ -6,7 +6,7 @@ import { useMedia } from "hooks/useMedia";
 const Shows = () => {
   const { mediaQuery, debounce, medias, popularMedias } = useMedia(
     "tv",
-    "marvel"
+    "life"
   );
 
   return (

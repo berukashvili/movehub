@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export const StyledItemNavLink = styled(NavLink)`
   color: white;
-  margin-bottom: 40px;
+  margin-bottom: 14px;
   transition: 0.4s ease-in-out;
 
   &:not(:last-child) {
@@ -32,11 +32,11 @@ export const StyledHeroImage = styled.img`
 export const StyledHeroImageContainer = styled.div`
   position: relative;
   width: ${(props) => (props.defaultstyle ? "380px" : "160px")};
-  height: 240px;
+  height: ${(props) => (props.defaultstyle ? "200px" : "240px")};
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 
   &:hover img {
     transform: scale(1.02);

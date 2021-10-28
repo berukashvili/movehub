@@ -8,5 +8,5 @@ export const StyledHeroListWrapper = styled.div`
 
 export const StyledHeroDefaultWrapper = styled.div`
   display: flex;
+  margin-bottom: ${(props) => (props.defaultstyle ? "20px" : "0")};
 `;
-export const StyledHeroPopularWrapper = styled(StyledHeroDefaultWrapper)``;
