@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FaHeart as heart, FaPlay as play } from "react-icons/fa";
+import Iframe from "react-iframe";
 
 export const StyledMediaContainer = styled.div`
   display: flex;
@@ -71,13 +72,35 @@ export const StyledMediaFavIcon = styled(heart)`
   font-size: 16px;
 `;
 
+export const StyledIframeWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
+
+export const StyledIframe = styled(Iframe)`
+  width: 1280px;
+  height: 720px;
+  border-radius: 4px;
+`;
+
+export const StyledModal = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+`;
+
 export const StyledMediaTrailerIcon = styled(play)`
   color: black;
   font-size: 16px;
   margin-right: 8px;
 `;
-
-export const StyledTrailerVideo = styled.iframe``;
 
 export const StyledTrailerBtn = styled.button`
   display: flex;
