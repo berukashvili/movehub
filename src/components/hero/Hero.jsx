@@ -1,14 +1,28 @@
 import React from "react";
-import { StyledHeroWrapper } from "./StyledHero";
+import { StyledHeroContainer, StyledHeroWrapper } from "./StyledHero";
 import HeroList from "./heroList/HeroList";
+import SearchBar from "searchBar/SearchBar";
 import { StyledMainBackground } from "./StyledHero";
 
-const Hero = ({ medias, popularMedias }) => {
+const Hero = ({
+  mediaQuery,
+  setMediaQuery,
+  defaultListTitle,
+  medias,
+  popularMedias,
+}) => {
   return (
-    <StyledHeroWrapper>
-      <StyledMainBackground />
-      <HeroList medias={medias} popularMedias={popularMedias} />
-    </StyledHeroWrapper>
+    <StyledHeroContainer>
+      <SearchBar mediaQuery={mediaQuery} setMediaQuery={setMediaQuery} />
+      <StyledHeroWrapper>
+        <StyledMainBackground />
+        <HeroList
+          defaultListTitle={defaultListTitle}
+          medias={medias}
+          popularMedias={popularMedias}
+        />
+      </StyledHeroWrapper>
+    </StyledHeroContainer>
   );
 };
 

@@ -5,8 +5,18 @@ export const StyledHeroListWrapper = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+export const StyledHeroDefaultContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export const StyledHeroDefaultWrapper = styled.div`
   display: flex;
-  margin-bottom: ${(props) => (props.defaultstyle ? "20px" : "0")};
+`;
+
+export const StyledHeroListTitle = styled.h4`
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
 `;

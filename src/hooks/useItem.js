@@ -66,11 +66,9 @@ export const useItem = (item) => {
         data: { results },
       } = await searchItem.get(`/${item}/${id}/videos?`);
 
-      const renderedTrailers = results.find((item) => item.type === "Trailer");
+      const renderedTrailers = results.find((item) => item?.type === "Trailer");
 
       setTrailers(renderedTrailers);
-
-      // setTrailers(renderedTrailers);
     };
 
     getTrailers();

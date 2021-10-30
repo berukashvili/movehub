@@ -4,7 +4,7 @@ import Hero from "components/hero/Hero";
 import { useMedia } from "hooks/useMedia";
 
 const Movies = () => {
-  const { mediaQuery, debounce, medias, popularMedias } = useMedia(
+  const { mediaQuery, setMediaQuery, medias, popularMedias } = useMedia(
     "movie",
     "Avengers"
   );
@@ -14,7 +14,8 @@ const Movies = () => {
       <Header />
       <Hero
         mediaQuery={mediaQuery}
-        debounce={debounce}
+        setMediaQuery={setMediaQuery}
+        defaultListTitle='Movies'
         medias={medias}
         popularMedias={popularMedias}
       />

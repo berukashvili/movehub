@@ -54,7 +54,12 @@ export const StyledHeroImageContainer = styled.div`
     z-index: 1;
     position: absolute;
     top: 0;
-    background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 1));
+    background: rgb(3, 0, 3);
+    background: linear-gradient(
+      0deg,
+      rgba(3, 0, 3, 1) 10%,
+      rgba(255, 255, 255, 0) 100%
+    );
     width: ${(props) => (props.defaultstyle ? "380px" : "160px")};
     height: 240px;
     opacity: 0%;

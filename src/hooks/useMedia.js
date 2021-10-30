@@ -2,17 +2,16 @@ import { useState, useEffect } from "react";
 import { searchItem } from "apis/MovieDB";
 
 export const useMedia = (page, defaultQuery) => {
-  const [mediaQuery] = useState(defaultQuery);
+  const [mediaQuery, setMediaQuery] = useState(defaultQuery);
   const [debounce, setDebounce] = useState(mediaQuery);
-  const [findMedias, setFindMedias] = useState([]);
   const [medias, setMedias] = useState([]);
   const [popularMedias, setPopularMedias] = useState([]);
 
-  const getMedia = page === "movie" ? "movie" : "tv";
+  const getPage = page === "movie" ? "movie" : "tv";
 
   useEffect(() => {
     const timerId = setTimeout(() => {
-      setDebounce(mediaQuery ? mediaQuery : "Marvel");
+      setDebounce(mediaQuery ? mediaQuery : "Avengers");
     }, 500);
     return () => {
       clearTimeout(timerId);
@@ -20,30 +19,12 @@ export const useMedia = (page, defaultQuery) => {
   }, [mediaQuery]);
 
   useEffect(() => {
-    const searchMedias = async () => {
+    const search = async () => {
       const {
         data: { results },
-      } = await searchItem.get(`/search/${getMedia}?`, {
+      } = await searchItem.get(`/search/${getPage}?`, {
         params: {
           query: debounce,
-        },
-      });
-
-      const renderedMedias = results.slice([0], [4]);
-
-      setFindMedias(renderedMedias);
-    };
-
-    searchMedias();
-  }, [debounce]);
-
-  useEffect(() => {
-    const getMedias = async () => {
-      const {
-        data: { results },
-      } = await searchItem.get(`/search/${getMedia}?`, {
-        params: {
-          query: defaultQuery,
         },
       });
 
@@ -52,18 +33,14 @@ export const useMedia = (page, defaultQuery) => {
       setMedias(renderedMedias);
     };
 
-    getMedias();
-  }, []);
+    search();
+  }, [debounce]);
 
   useEffect(() => {
     const getPopularMedias = async () => {
       const {
         data: { results },
-      } = await searchItem.get(`/${getMedia}/popular?`, {
-        params: {
-          query: debounce,
-        },
-      });
+      } = await searchItem.get(`/${getPage}/popular?`);
       const renderedPopularMedias = results.slice([0], [10]);
 
       setPopularMedias(renderedPopularMedias);
@@ -72,5 +49,5 @@ export const useMedia = (page, defaultQuery) => {
     getPopularMedias();
   }, []);
 
-  return { mediaQuery, debounce, medias, popularMedias };
+  return { mediaQuery, setMediaQuery, medias, popularMedias };
 };
