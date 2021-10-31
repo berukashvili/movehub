@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyledInput } from "./StyledSearchBar";
 
 export const SearchBar = ({ mediaQuery, setMediaQuery }) => {

@@ -35,9 +35,9 @@ export const useItem = (item) => {
 
       const persons = cast.slice(0, 3);
 
-      const directing = crew.find(
-        (director) => director.department === "Directing"
-      );
+      const directing = crew.find((director) => {
+        return director?.known_for_department === "Directing";
+      });
 
       setActing(persons);
       setDirector(directing);

@@ -37,7 +37,9 @@ const Details = () => {
     setModal(!modal);
   };
 
-  const trailerPath = `https://www.youtube-nocookie.com/embed/${trailers.key}`;
+  const trailerPath = `https://www.youtube-nocookie.com/embed/${trailers?.key}`;
+
+  console.log(director);
 
   return (
     <>
@@ -84,7 +86,7 @@ const Details = () => {
           </StyledMediaCast>
           <StyledMediaCast>
             Director
-            <StyledMediaCastSpan></StyledMediaCastSpan>{" "}
+            <StyledMediaCastSpan>{director?.name}</StyledMediaCastSpan>{" "}
           </StyledMediaCast>
           <StyledBackdropWrapper>
             {image.map((backdrop, index) => (
