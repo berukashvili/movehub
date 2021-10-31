@@ -34,20 +34,21 @@ export const useMedia = (page, defaultQuery) => {
     };
 
     search();
-  }, [debounce]);
+  }, [debounce, getPage]);
 
   useEffect(() => {
     const getPopularMedias = async () => {
       const {
         data: { results },
       } = await searchItem.get(`/${getPage}/popular?`);
+
       const renderedPopularMedias = results.slice([0], [10]);
 
       setPopularMedias(renderedPopularMedias);
     };
 
     getPopularMedias();
-  }, []);
+  }, [getPage]);
 
   return { mediaQuery, setMediaQuery, medias, popularMedias };
 };

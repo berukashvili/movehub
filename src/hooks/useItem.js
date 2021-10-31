@@ -25,7 +25,7 @@ export const useItem = (item) => {
     };
 
     search();
-  }, []);
+  }, [item, id]);
 
   useEffect(() => {
     const getCast = async () => {
@@ -44,7 +44,7 @@ export const useItem = (item) => {
     };
 
     getCast();
-  }, []);
+  }, [item, id]);
 
   useEffect(() => {
     const getImage = async () => {
@@ -58,7 +58,7 @@ export const useItem = (item) => {
     };
 
     getImage();
-  }, []);
+  }, [item, id]);
 
   useEffect(() => {
     const getTrailers = async () => {
@@ -72,7 +72,7 @@ export const useItem = (item) => {
     };
 
     getTrailers();
-  }, []);
+  }, [item, id]);
 
   return {
     info,

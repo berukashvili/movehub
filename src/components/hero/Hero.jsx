@@ -1,7 +1,7 @@
 import React from "react";
 import { StyledHeroContainer, StyledHeroWrapper } from "./StyledHero";
 import HeroList from "./heroList/HeroList";
-import SearchBar from "searchBar/SearchBar";
+import SearchBar from "components/searchBar/SearchBar";
 import { StyledMainBackground } from "./StyledHero";
 
 const Hero = ({
