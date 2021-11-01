@@ -15,7 +15,7 @@ export const StyledHeroDefaultWrapper = styled.div`
 `;
 
 export const StyledHeroListTitle = styled.h4`
-  color: white;
+  color: black;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 10px;

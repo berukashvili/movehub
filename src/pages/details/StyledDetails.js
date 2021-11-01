@@ -27,8 +27,8 @@ export const StyledMediaItemsWrapper = styled.div`
 `;
 
 export const StyledMediaTitle = styled.h2`
-  color: white;
-  font-size: 62px;
+  color: black;
+  font-size: 68px;
   font-weight: 900;
   width: 90%;
   margin-bottom: 20px;
@@ -43,14 +43,14 @@ export const StyledMediaVote = styled.div`
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: white;
+  background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 export const StyledMediaVoteNum = styled.h4`
-  color: black;
+  color: white;
   font-size: 22px;
   font-weight: 600;
 `;
@@ -60,7 +60,7 @@ export const StyledMediaBtn = styled.button`
   height: 50px;
   margin: 0 20px 0 70px;
   border-radius: 50%;
-  background-color: white;
+  background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,7 +68,7 @@ export const StyledMediaBtn = styled.button`
 `;
 
 export const StyledMediaFavIcon = styled(heart)`
-  color: black;
+  color: white;
   font-size: 16px;
 `;
 
@@ -115,20 +115,20 @@ export const StyledTrailerBtn = styled.button`
 `;
 
 export const StyledFavTitle = styled.h6`
-  color: white;
+  color: black;
   font-size: 15px;
   font-weight: 500;
 `;
 
 export const StyledMediaInfoTitle = styled.h2`
-  color: white;
+  color: black;
   font-size: 24px;
   font-weight: 500;
   margin-top: 40px;
 `;
 
 export const StyledMediaInfo = styled.p`
-  color: white;
+  color: black;
   font-size: 16px;
   line-height: 2;
   width: 60%;
@@ -136,7 +136,7 @@ export const StyledMediaInfo = styled.p`
 `;
 
 export const StyledMediaCast = styled.h6`
-  color: white;
+  color: black;
   font-size: 15px;
   font-weight: 400;
   color: gray;
@@ -145,7 +145,7 @@ export const StyledMediaCast = styled.h6`
 export const StyledMediaCastSpan = styled.span`
   font-size: 15px;
   font-weight: 500;
-  color: white;
+  color: black;
   margin-left: 20px;
 `;
 

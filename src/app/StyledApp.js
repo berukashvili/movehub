@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: normal;
-  background-color: black;
+  background-color: white;
   width: 1700px;
   margin: 0 auto;
   }

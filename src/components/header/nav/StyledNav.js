@@ -15,7 +15,7 @@ export const StyledNavItem = styled.li`
 `;
 
 export const StyledNavLink = styled(NavLink)`
-  color: white;
+  color: black;
   font-size: 24px;
   font-weight: 600;
 
