@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Movies from "pages/Movies";
 import Shows from "pages/Shows";
 import Favourites from "pages/Favourites";
@@ -9,7 +9,10 @@ const Routes = () => {
   return (
     <>
       <Switch>
-        <Route exact path={["/", "/movies"]} component={Movies} />
+        <Route exact path='/'>
+          <Redirect from='/' to='/movies'></Redirect>
+        </Route>
+        <Route path='/movies' component={Movies} />
         <Route path='/shows' component={Shows} />
         <Route path='/favourites' component={Favourites} />
         <Route path='/details/:id' component={Details} />
