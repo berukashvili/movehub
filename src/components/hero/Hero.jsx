@@ -1,26 +1,24 @@
 import React from "react";
-import { StyledHeroContainer, StyledHeroWrapper } from "./StyledHero";
+import { StyledHeroWrapper } from "./StyledHero";
 import HeroList from "./heroList/HeroList";
 import SearchBar from "components/searchBar/SearchBar";
 
 const Hero = ({
-  mediaQuery,
-  setMediaQuery,
+  searchQuery,
+  setSearchQuery,
   defaultListTitle,
   medias,
   popularMedias,
 }) => {
   return (
-    <StyledHeroContainer>
-      <SearchBar mediaQuery={mediaQuery} setMediaQuery={setMediaQuery} />
-      <StyledHeroWrapper>
-        <HeroList
-          defaultListTitle={defaultListTitle}
-          medias={medias}
-          popularMedias={popularMedias}
-        />
-      </StyledHeroWrapper>
-    </StyledHeroContainer>
+    <StyledHeroWrapper>
+      <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <HeroList
+        defaultListTitle={defaultListTitle}
+        medias={medias}
+        popularMedias={popularMedias}
+      />
+    </StyledHeroWrapper>
   );
 };
 

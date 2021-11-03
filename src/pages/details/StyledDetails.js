@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { FaHeart as heart, FaPlay as play } from "react-icons/fa";
 import Iframe from "react-iframe";
 
-export const StyledMediaContainer = styled.div`
+export const StyledMediaContainer = styled.main`
   display: flex;
   justify-content: flex-end;
   align-items: center;

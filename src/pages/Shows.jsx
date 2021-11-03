@@ -4,7 +4,7 @@ import Hero from "components/hero/Hero";
 import { useMedia } from "hooks/useMedia";
 
 const Shows = () => {
-  const { mediaQuery, setMediaQuery, medias, popularMedias } = useMedia(
+  const { searchQuery, setSearchQuery, medias, popularMedias } = useMedia(
     "tv",
     "life"
   );
@@ -13,8 +13,8 @@ const Shows = () => {
     <>
       <Header />
       <Hero
-        mediaQuery={mediaQuery}
-        setMediaQuery={setMediaQuery}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
         defaultListTitle='Shows'
         medias={medias}
         popularMedias={popularMedias}

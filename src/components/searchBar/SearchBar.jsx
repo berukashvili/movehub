@@ -1,7 +1,7 @@
 import React from "react";
 import { StyledInput } from "./StyledSearchBar";
 
-export const SearchBar = ({ mediaQuery, setMediaQuery }) => {
+export const SearchBar = ({ searchQuery, setSearchQuery }) => {
   const onSubmit = (e) => {
     e.preventDefault();
   };
@@ -9,7 +9,7 @@ export const SearchBar = ({ mediaQuery, setMediaQuery }) => {
   return (
     <form onSubmit={onSubmit}>
       <StyledInput
-        onChange={(e) => setMediaQuery(e.target.value)}
+        onChange={(e) => setSearchQuery(e.target.value)}
         type='text'
         placeholder='Search'
         name='query'

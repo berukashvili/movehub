@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { searchItem } from "apis/MovieDB";
 
 export const useMedia = (page, defaultQuery) => {
-  const [mediaQuery, setMediaQuery] = useState(defaultQuery);
-  const [debounce, setDebounce] = useState(mediaQuery);
+  const [searchQuery, setSearchQuery] = useState(defaultQuery);
+  const [debounce, setDebounce] = useState(searchQuery);
   const [medias, setMedias] = useState([]);
   const [popularMedias, setPopularMedias] = useState([]);
 
@@ -11,12 +11,12 @@ export const useMedia = (page, defaultQuery) => {
 
   useEffect(() => {
     const timerId = setTimeout(() => {
-      setDebounce(mediaQuery ? mediaQuery : "Avengers");
+      setDebounce(searchQuery ? searchQuery : "Avengers");
     }, 500);
     return () => {
       clearTimeout(timerId);
     };
-  }, [mediaQuery]);
+  }, [searchQuery]);
 
   useEffect(() => {
     const search = async () => {
@@ -50,5 +50,5 @@ export const useMedia = (page, defaultQuery) => {
     getPopularMedias();
   }, [getPage]);
 
-  return { mediaQuery, setMediaQuery, medias, popularMedias };
+  return { searchQuery, setSearchQuery, medias, popularMedias };
 };

@@ -1,16 +1,8 @@
 import styled from "styled-components";
 
-export const StyledLogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 210px;
-  height: 95px;
-`;
-
-export const StyledLogo = styled.img`
-  position: absolute;
-  width: 100%;
+export const StyledLogo = styled.h3`
+  font-size: 32px;
+  font-weight: 700;
 `;
 
 export const StyledHeaderWrapper = styled.div`
@@ -21,5 +13,5 @@ export const StyledHeaderWrapper = styled.div`
 `;
 export const StyledHeaderContainer = styled.header`
   position: absolute;
-  width: 1700px;
+  top: 0;
 `;
