@@ -9,8 +9,10 @@ import Nav from "./nav/Nav";
 const Header = () => {
   return (
     <StyledHeaderContainer>
-      <StyledLogo>MovieHub</StyledLogo>
-      <Nav />
+      <StyledHeaderWrapper>
+        <StyledLogo>MovieHub</StyledLogo>
+        <Nav />
+      </StyledHeaderWrapper>
     </StyledHeaderContainer>
   );
 };

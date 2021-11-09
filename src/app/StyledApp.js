@@ -15,9 +15,7 @@ export const GlobalStyle = createGlobalStyle`
   font-size: 16px;
   font-weight: normal;
   background-color: white;
-  width: 1700px;
-  margin: 0 auto;
-  height: 100vh;
+  
   }
 
   

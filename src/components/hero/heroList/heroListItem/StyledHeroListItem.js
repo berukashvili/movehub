@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { devices } from "common/_device";
 
 export const StyledItemNavLink = styled(NavLink)`
   color: white;
@@ -8,6 +9,24 @@ export const StyledItemNavLink = styled(NavLink)`
 
   &:not(:last-child) {
     margin-right: ${(props) => (props.defaultstyle ? "60px" : "11px")};
+  }
+
+  @media ${devices.desktopL} {
+    &:not(:last-child) {
+      margin-right: ${(props) => (props.defaultstyle ? "53px" : "11px")};
+    }
+  }
+
+  @media ${devices.laptopL} {
+    &:not(:last-child) {
+      margin-right: ${(props) => (props.defaultstyle ? "43px" : "8px")};
+    }
+  }
+
+  @media ${devices.laptop} {
+    &:not(:last-child) {
+      margin-right: ${(props) => (props.defaultstyle ? "25px" : "7px")};
+    }
   }
 `;
 export const StyledItemTitle = styled.h4`
@@ -68,5 +87,20 @@ export const StyledHeroImageContainer = styled.div`
 
   &:hover:before {
     opacity: 70%;
+  }
+
+  @media ${devices.desktopL} {
+    width: ${(props) => (props.defaultstyle ? "310px" : "130px")};
+    height: ${(props) => (props.defaultstyle ? "170px" : "194px")};
+  }
+
+  @media ${devices.laptopL} {
+    width: ${(props) => (props.defaultstyle ? "280px" : "118px")};
+    height: ${(props) => (props.defaultstyle ? "160px" : "175px")};
+  }
+
+  @media ${devices.laptop} {
+    width: ${(props) => (props.defaultstyle ? "269px" : "109px")};
+    height: ${(props) => (props.defaultstyle ? "160px" : "162px")};
   }
 `;

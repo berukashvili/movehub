@@ -18,7 +18,7 @@ const HeroListItem = ({ media, defaultstyle }) => {
       defaultstyle={defaultstyle}
       key={`${media}.id`}
       to={{
-        pathname: `/details/${media.id}`,
+        pathname: `details/${media.id}`,
         state: { itemType: getType },
       }}
     >

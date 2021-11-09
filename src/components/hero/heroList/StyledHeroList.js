@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "common/_device";
 
 export const StyledHeroListWrapper = styled.div`
   display: flex;
@@ -12,6 +13,11 @@ export const StyledHeroDefaultContainer = styled.div`
 
 export const StyledHeroDefaultWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
+
+  /* @media ${devices.laptop} {
+    height: ${(props) => (props.defaultstyle ? "" : "500px")};
+  } */
 `;
 
 export const StyledHeroListTitle = styled.h4`

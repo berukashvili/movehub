@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FaHeart as heart, FaPlay as play } from "react-icons/fa";
 import Iframe from "react-iframe";
+import { devices } from "common/_device";
 
 export const StyledMediaContainer = styled.main`
   display: flex;
@@ -17,6 +18,16 @@ export const StyledFloat = styled.div`
   left: 0;
   width: 700px;
   height: 100%;
+
+  @media ${devices.desktopL} {
+    width: 550px;
+  }
+  @media ${devices.laptopL} {
+    width: 450px;
+  }
+  @media ${devices.laptop} {
+    width: 350px;
+  }
 `;
 
 export const StyledMediaItemsWrapper = styled.div`
@@ -24,6 +35,13 @@ export const StyledMediaItemsWrapper = styled.div`
   align-items: flex-start;
   flex-direction: column;
   width: 1000px;
+
+  @media ${devices.laptopL} {
+    padding-left: 50px;
+  }
+  @media ${devices.laptop} {
+    padding-left: 150px;
+  }
 `;
 
 export const StyledMediaTitle = styled.h2`
@@ -167,6 +185,13 @@ export const StyledBackdropContainer = styled.div`
 
   &:hover img {
     transform: scale(1.05);
+  }
+
+  @media ${devices.laptopL} {
+    width: 290px;
+  }
+  @media ${devices.laptop} {
+    width: 270px;
   }
 `;
 export const StyledBackdrop = styled.img`

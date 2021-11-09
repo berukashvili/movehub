@@ -1,4 +1,5 @@
 import React from "react";
+import { StyledMoviesWrapper } from "./StyledShows";
 import Header from "components/header/Header";
 import Hero from "components/hero/Hero";
 import { useMedia } from "hooks/useMedia";
@@ -10,7 +11,7 @@ const Shows = () => {
   );
 
   return (
-    <>
+    <StyledMoviesWrapper>
       <Header />
       <Hero
         searchQuery={searchQuery}
@@ -19,7 +20,7 @@ const Shows = () => {
         medias={medias}
         popularMedias={popularMedias}
       />
-    </>
+    </StyledMoviesWrapper>
   );
 };
 
