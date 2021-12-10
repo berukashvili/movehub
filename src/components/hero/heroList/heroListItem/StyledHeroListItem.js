@@ -56,6 +56,7 @@ export const StyledHeroImageContainer = styled.div`
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
+  box-shadow: 5px 1px 35px 7px rgba(0, 0, 0, 0.26);
 
   &:hover img {
     transform: scale(1.02);
